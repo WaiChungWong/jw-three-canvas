@@ -26,6 +26,8 @@ class ExampleThreeCanvas extends Component {
       resumeOnShown: false
     };
 
+    this.animate = this.animate.bind(this);
+
     this.scene = new Scene();
 
     this.camera = new PerspectiveCamera(50, 1, 1, 1000);
@@ -56,7 +58,7 @@ class ExampleThreeCanvas extends Component {
     renderer.setClearColor(0xffffff);
   }
 
-  animate(scene, camera, offsetWidth, offsetHeight, timeDiff) {
+  animate(width, height, timeDiff) {
     const { cube } = this;
 
     cube.rotation.x += timeDiff;
@@ -116,9 +118,7 @@ class ExampleThreeCanvas extends Component {
         <ThreeCanvas
           className="animation"
           ref={c => (this.canvas = c)}
-          animate={(scene, camera, width, height, timeDiff) =>
-            this.animate(scene, camera, width, height, timeDiff)
-          }
+          animate={this.animate}
           scene={scene}
           camera={camera}
         />

@@ -24,14 +24,14 @@ A react component for canvas, integrated with [three.js](https://threejs.org) re
 
 ## Props
 
-| Prop                            | Description                                                                                                                                                                                             |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `maintainAspectRatio`(optional) | whether the canvas should keep aspect ratio from the moment it was created. Default: `true`                                                                                                             |
-| `onResize`(optional)            | event handler when the canvas is being resized.                                                                                                                                                         |
-| `animator`(optional)            | the animator object for controlling the animation. If not provided, it will be created from within.                                                                                                     |
-| `animate`(optional)             | animation method. Parameters:<br> - `context`: canvas context<br> - `width`: context width<br> - `height`: context height<br> - `timeDiff`: time difference between the last animate time (in seconds). |
-| `scene`                         | A [scene](https://threejs.org/docs/index.html#api/scenes/Scene) from [three.js](https://threejs.org)                                                                                                    |
-| `camera`                        | A [camera](https://threejs.org/docs/index.html#api/cameras/Camera) from [three.js](https://threejs.org)                                                                                                 |
+| Prop                            | Description                                                                                                                                                             |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `maintainAspectRatio`(optional) | whether the canvas should keep aspect ratio from the moment it was created. Default: `true`                                                                             |
+| `onResize`(optional)            | event handler when the canvas is being resized.                                                                                                                         |
+| `animator`(optional)            | the animator object for controlling the animation. If not provided, it will be created from within.                                                                     |
+| `animate`(optional)             | animation method. Parameters:<br> - `width`: context width<br> - `height`: context height<br> - `timeDiff`: time difference between the last animate time (in seconds). |
+| `scene`                         | A [scene](https://threejs.org/docs/index.html#api/scenes/Scene) from [three.js](https://threejs.org)                                                                    |
+| `camera`                        | A [camera](https://threejs.org/docs/index.html#api/cameras/Camera) from [three.js](https://threejs.org)                                                                 |
 
 ## Usage
 
@@ -81,7 +81,7 @@ class Example extends Component {
     /** ... **/
   }
 
-  animate(scene, camera, offsetWidth, offsetHeight, timeDiff) {
+  animate(width, height, timeDiff) {
     /** ... **/
   }
 
