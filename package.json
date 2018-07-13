@@ -1,0 +1,84 @@
+{
+  "name": "jw-three-canvas",
+  "version": "0.1.0",
+  "description": "A react component for canvas, integrated with three.js renderer and animation feature.",
+  "author": "john wong <johnwongwwc@gmail.com>",
+  "homepage": "https://waichungwong.github.io/jw-three-canvas/build",
+  "keywords": [
+    "canvas",
+    "react",
+    "three",
+    "animation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WaiChungWong/jw-three-canvas.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "debounce": "^1.1.0",
+    "jw-animator": "^0.1.2",
+    "prop-types": "^15.6.1",
+    "three": "^0.94.0",
+    "supports-passive": "0.0.1",
+    "webgl-enabled": "^1.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "install": "^0.10.4",
+    "node-sass": "^4.8.3",
+    "npm-run-all": "^4.1.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-scripts": "^1.1.4"
+  },
+  "main": "./lib/index.js",
+  "scripts": {
+    "build-css": "node-sass src/ -o src/",
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "babel src/module -d lib --copy-files",
+    "build-demo": "npm run build-css && react-scripts build"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "plugins": [
+      "react"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "semi": 2,
+      "no-empty": 0
+    }
+  }
+}
