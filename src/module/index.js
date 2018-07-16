@@ -43,6 +43,11 @@ class ThreeCanvas extends Component {
     renderer.render(scene, camera);
   }
 
+  /** Retrieve the canvas react component. */
+  getCanvasElement() {
+    return this.canvas;
+  }
+
   componentDidMount() {
     const { props, wrapper, canvas } = this;
     const { animator, camera } = props;

@@ -1,6 +1,6 @@
 {
   "name": "jw-three-canvas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A react component for canvas, integrated with three.js renderer and animation feature.",
   "author": "john wong <johnwongwwc@gmail.com>",
   "homepage": "https://waichungwong.github.io/jw-three-canvas/build",

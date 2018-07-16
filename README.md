@@ -22,6 +22,12 @@ A react component for canvas, integrated with [three.js](https://threejs.org) re
 
 [![NPM](https://nodei.co/npm/jw-three-canvas.png)](https://nodei.co/npm/jw-three-canvas)
 
+## Methods
+
+| Method             | Parameters | Description                          |
+| ------------------ | ---------- | ------------------------------------ |
+| `getCanvasElement` |            | retrieve the canvas react component. |
+
 ## Props
 
 | Prop                            | Description                                                                                                                                                             |
