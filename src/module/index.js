@@ -76,9 +76,9 @@ class ThreeCanvas extends Component {
         const { scene, camera } = props;
         const { offsetWidth, offsetHeight } = wrapper;
 
-        props.animate(offsetWidth, offsetHeight, timeDiff);
-
         renderer.render(scene, camera);
+
+        props.animate(offsetWidth, offsetHeight, timeDiff);
       });
     }
   }
