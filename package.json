@@ -1,6 +1,6 @@
 {
   "name": "jw-three-canvas",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A react component for canvas, integrated with three.js renderer and animation feature.",
   "author": "john wong <johnwongwwc@gmail.com>",
   "homepage": "https://waichungwong.github.io/jw-three-canvas/build",
@@ -16,26 +16,24 @@
   },
   "license": "MIT",
   "dependencies": {
-    "debounce": "^1.1.0",
-    "jw-animator": "^0.1.2",
-    "prop-types": "^15.6.1",
-    "three": "^0.94.0",
+    "debounce": "^1.2.0",
+    "jw-animator": "^0.1.5",
+    "prop-types": "^15.7.2",
     "supports-passive": "0.0.1",
+    "three": "^0.101.1",
     "webgl-enabled": "^1.0.3"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "eslint": "^4.19.1",
-    "eslint-plugin-react": "^7.7.0",
-    "install": "^0.10.4",
-    "node-sass": "^4.8.3",
-    "npm-run-all": "^4.1.3",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-scripts": "^1.1.4"
+    "eslint-plugin-react": "^7.12.2",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "^2.1.2"
   },
   "main": "./lib/index.js",
   "scripts": {
@@ -80,5 +78,11 @@
       "semi": 2,
       "no-empty": 0
     }
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

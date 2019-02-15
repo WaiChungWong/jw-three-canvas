@@ -51,7 +51,6 @@ class ThreeCanvas extends Component {
   componentDidMount() {
     const { props, wrapper, canvas } = this;
     const { animator, camera } = props;
-    const { offsetWidth, offsetHeight } = wrapper;
 
     if (webGLEnabled()) {
       this.renderer = new WebGLRenderer({ canvas, antialias: true });
@@ -60,13 +59,23 @@ class ThreeCanvas extends Component {
     }
 
     this.renderer.setPixelRatio(window.devicePixelRatio);
-    this.renderer.setSize(offsetWidth, offsetHeight);
 
-    camera.aspect = offsetWidth / offsetHeight;
-    camera.updateProjectionMatrix();
+    setTimeout(() => {
+      const { offsetWidth, offsetHeight } = wrapper;
+
+      this.renderer.setSize(offsetWidth, offsetHeight);
+
+      camera.aspect = offsetWidth / offsetHeight;
+      camera.updateProjectionMatrix();
+    });
 
     window.addEventListener("resize", this._resizeHandler, eventOptions);
     canvas.addEventListener("resize", this._resizeHandler, eventOptions);
+
+    if (window.MutationObserver) {
+      this.mutationObserver = new window.MutationObserver(this._resizeHandler);
+      this.mutationObserver.observe(canvas, { attributes: true });
+    }
 
     this.animator = animator || new Animator();
 
@@ -88,6 +97,10 @@ class ThreeCanvas extends Component {
 
     window.removeEventListener("resize", this._resizeHandler);
     canvas.removeEventListener("resize", this._resizeHandler);
+
+    if (window.MutationObserver) {
+      this.mutationObserver.disconnect();
+    }
 
     this.removeAnimation();
   }

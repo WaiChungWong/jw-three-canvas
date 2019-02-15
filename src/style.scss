@@ -110,5 +110,9 @@ body {
     &#stop {
       @include settingsButton(lighten(red, 20));
     }
+
+    &[disabled] {
+      opacity: 0.5;
+    }
   }
 }
